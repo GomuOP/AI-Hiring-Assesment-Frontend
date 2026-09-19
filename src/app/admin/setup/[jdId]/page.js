@@ -304,13 +304,13 @@ export default function SetupPage() {
                                         label="Start Time"
                                         type="datetime-local"
                                         value={formatForDateTimeLocal(config.startTime)}
-                                        onChange={(e) => handleConfigChange("startTime", e.target.value)}
+                                        onChange={(e) => handleConfigChange("startTime", e.target.value ? new Date(e.target.value).toISOString() : "")}
                                     />
                                     <Input
                                         label="End Time"
                                         type="datetime-local"
                                         value={formatForDateTimeLocal(config.endTime)}
-                                        onChange={(e) => handleConfigChange("endTime", e.target.value)}
+                                        onChange={(e) => handleConfigChange("endTime", e.target.value ? new Date(e.target.value).toISOString() : "")}
                                     />
                                 </div>
 
